@@ -14,10 +14,19 @@ services:
     volumes:
       - ../db/database:/var/lib/postgresql/data
       - ../db/init:/docker-entrypoint-initdb.d  
+  nginx:
+    image: nginx:1.17.7
+    build: ./nginx
+    container_name: 'django_nginx'
+    ports:
+      - "80:80"
+    volumes:
+      - ./web/gunicorn.conf:/etc/nginx/conf.d/default.conf
+      - ../gunicorn:/var/run/gunicorn
   web:
-    image: django/web:1.0
+    image: django-gunicorn/web:1.0
     build: ./web
-    container_name: 'django_web'
+    container_name: 'django-gunicorn_web'
     ports:
       - 8000:8000
     environment:
@@ -26,6 +35,10 @@ services:
       - db
     stdin_open: true
     tty: true
+    ports:
+      - 8000:8000
     volumes:
       - ../web:/home/user1/dev
+      - ../gunicorn:/var/run/gunicorn
+    # command: bash -c "gunicorn myprj.wsgi --bind=unix:/var/run/gunicorn/gunicorn.sock"
  
