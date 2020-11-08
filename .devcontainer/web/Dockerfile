@@ -23,4 +23,4 @@ ENV USER user1
 # # ユーザーの切替
 # USER ${USER}
 
-# CMD gunicorn myprj.wsgi --bind=unix:/var/run/gunicorn/gunicorn.sock
+# CMD cd /home/user1/dev && gunicorn myprj.wsgi --bind=unix:/var/run/gunicorn/gunicorn.sock
