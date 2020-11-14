@@ -9,4 +9,4 @@ def index(request):
   posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
 
   # return HttpResponse(f'hello world')
-  return render(request, 'blog/index.html', {'posts': posts})
+  return render(request, 'main/index.html', {'posts': posts})
