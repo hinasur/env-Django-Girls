@@ -27,7 +27,10 @@ DEBUG = True
 # DEBUG = False
 
 # ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['18.191.87.99']
+ALLOWED_HOSTS = [
+    '18.191.87.99',
+    'http://django-gunicorn/'
+]
 
 
 # Application definition
