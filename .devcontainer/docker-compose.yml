@@ -23,6 +23,7 @@ services:
     volumes:
       - ./web/gunicorn.conf:/etc/nginx/conf.d/default.conf
       - ../gunicorn:/var/run/gunicorn
+      - ../web:/home/user1/dev
   web:
     image: django-gunicorn/web:1.0
     build: ./web
