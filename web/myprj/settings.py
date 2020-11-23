@@ -26,11 +26,11 @@ SECRET_KEY = '=33aj3ywm6^n8-mz2^a69h3s9)^5m&au*r!*22l*n!c7bex@^d'
 DEBUG = True
 # DEBUG = False
 
-# ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = [
-    '18.191.87.99',
-    'http://django-gunicorn/'
-]
+ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = [
+#     '18.191.87.99',
+#     'http://django-gunicorn/'
+# ]
 
 
 # Application definition
